@@ -13,9 +13,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const prisma_1 = require("../generated/prisma");
+const client_js_1 = require("../generated/prisma/client.js");
 const app = (0, express_1.default)();
-const prismaClient = new prisma_1.PrismaClient();
+const prismaClient = new client_js_1.PrismaClient();
 app.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const user = yield prismaClient.user.findMany();
     res.json({ message: "data from the db", user });

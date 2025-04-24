@@ -1,5 +1,5 @@
 import  Express, { Request, Response }  from "express";
-import { PrismaClient } from "../generated/prisma";
+import { PrismaClient } from "../generated/prisma/client.js";
 const app = Express();
 const prismaClient = new PrismaClient();
 
@@ -15,6 +15,7 @@ app.post('/', async(req:Request,res:Response)=>{
             password: "Gaurav"
         }
     })
+    res.json({message:"user created success"});
 })
 
 app.listen(3000, ()=>{
